@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+<script src="https://chartjs-plugin-datalabels.netlify.com/chartjs-plugin-datalabels.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<% include ./navy %>
+<style>
+    input[type = button] {
+    border: 1px outset rgb(0, 255, 34);
+    background-color: rgb(243, 250, 243);
+    height:150px;
+    width:150px;
+    cursor:pointer;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: black;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+
+.butt:hover {
+   background-color: green;
+    color:white;
+}
+</style>
+
+<body>
+
+   <div class="container">
+    <% include ./partials/messages %>
+    <br>                      
+    <% if ( success_messages !='' ) { %>
+      <div class="alert alert-success" >
+          <strong><%= success_messages %> </strong>
+      </div>
+      <% } %>
+      <br>
+      <br>
+      <h1 style="text-align: center; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; ">Select Product Category to Update</h1>
+        <% rs.forEach(function(item) { %>
+            <input  class="butt" type="button" onclick= "location.href= '/inventory-update/<%= item.cat_id %>';" value="<%= item.cat_name %>"/>
+            
+        <% }); %>  
+    </div>
+</body>
+</html>

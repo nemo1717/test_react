@@ -1,0 +1,6 @@
+{
+    "host": "database-1.c8sjwaeiqqxx.us-east-2.rds.amazonaws.com",
+    "user": "admin",
+    "password": "Layangrade17",
+    "database": "layanRealEstate"
+}
